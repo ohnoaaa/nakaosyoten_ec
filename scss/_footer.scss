@@ -1,0 +1,65 @@
+@use "global" as *;
+.footer{
+  padding-top: 11rem;
+  background: linear-gradient(180deg, rgba(31,31,31,0) 0%, rgba(33,33,33,1) 45%, rgba(33,33,33,1) 100%);
+  // background: linear-gradient(180deg, rgba(233,33,33,0) 0%, rgba(233,33,33,1) 45%, rgba(231,31,31,1) 100%);
+  @include deviceTBSP{
+    padding-top: 8rem;
+  }
+  .footer_container{
+    padding-top: 8.6rem;
+    border-top: 1px solid rgba(255,255,255,.5);
+    @include flex(between,start);
+    padding: 8.6rem 6rem;
+  }
+  .footer_box{
+    .logo{
+      font: 600 2.5rem / 1.2 $font;
+    }
+    .text{
+      font-size: 1.5rem;
+    }
+    .btn{
+      font-size: 1.6rem;
+    }
+    .btn.bg{
+      margin-top: 0;
+      background: #000;
+      padding: .8rem 2.2rem;
+      justify-content: space-between;
+    }
+    .footer_item{
+      padding-bottom: 3rem;
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      span{
+        width: 50%;
+        height: 1px;
+        background: rgba(255,255,255,.5);
+        display: inline-block;
+      }
+    }
+    .footer_link{
+      letter-spacing: .1em;
+      font-size: 1.6rem;
+      line-height: 1.4;
+      padding-bottom: 3rem;
+    }
+    flex-basis: 24.9%;
+    &:nth-child(2){
+      flex-basis: 19.9%;
+    }
+    &:nth-child(3){
+      flex-basis: 24.1%;
+    }
+    &:nth-child(4){
+      flex-basis: 21.5%;
+    }
+  }
+}
+.spcopy{
+  font: 600 1.2rem / 1.6 $font;
+  padding-bottom: 20px;
+  text-align: center;
+}

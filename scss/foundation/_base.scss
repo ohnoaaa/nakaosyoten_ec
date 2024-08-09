@@ -1,0 +1,136 @@
+@use "../global" as *;
+*{
+  box-sizing: border-box;
+}
+html {
+	font-size: 62.5%;
+  scroll-behavior: smooth;
+	@include deviceSP{
+		// font-size: 2.5vw;
+	}
+}
+body {
+  font-family: shippori-mincho, '游明朝','Yu Mincho',YuMincho,'Hiragino Mincho Pro',serif;
+	// font-family: "source-han-sans-japanese", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	font-size: 1.6em;
+	line-height: 1.6;
+	color: $font_base;
+	min-width: 1180px;
+  -webkit-font-smoothing: antialiased; //文字が太すぎるのをなおす
+  background: #1F1F1F;
+  color: #fff;
+  letter-spacing: .075em;
+	@include deviceTBSP{
+		min-width: auto;
+	}
+  
+}
+
+
+// /iOSでのデフォルトスタイルをリセット /
+input[type="submit"],
+input[type="button"] {
+border-radius: 0;
+-webkit-box-sizing: content-box;
+-webkit-appearance: button;
+appearance: button;
+border: none;
+box-sizing: border-box;
+&::-webkit-search-decoration {
+display: none;
+}
+&::focus {
+outline-offset: -2px;
+}
+}
+
+img {
+  border:0;
+  vertical-align: bottom;
+  width: 100%;
+  height: auto;
+	/*image-rendering: -webkit-optimize-contrast;*/
+	.safari &{
+		image-rendering: inherit;
+	}
+}
+
+/* mouseover
+--------------------------------------------------*/
+@include devicePC {
+	.over {
+		&:hover {
+			opacity: 0.6;
+			transition: opacity 0.3s;
+		}
+	}
+}
+
+label {
+	cursor: pointer;
+}
+
+/* link
+--------------------------------------------------*/
+a {
+  display: block;
+	color: $font_base;
+	transition: $duration;
+	will-change: transform,opacity;
+	&:link,
+	&:active,
+	&:visited {
+		text-decoration: none;
+	}
+	&:focus {
+		text-decoration: none;
+	}
+	@include hover{
+		text-decoration: none;
+		/*opacity: $opacity;*/
+	}
+  &:hover{
+    opacity: .7;
+  }
+}
+a[href*="tel:"] {
+	pointer-events: none;
+	@include deviceSP {
+		pointer-events: all;
+	}
+}
+
+/* input
+--------------------------------------------------*/
+button {
+	color: $font_base;
+	transition: $duration;
+	will-change: transform;
+	letter-spacing: 0.05em;
+	&:focus {
+		text-decoration: none;
+	}
+}
+
+.wrapper{
+  width: 1180px;
+  margin: 0 auto;
+  @media screen and (max-width: 1180px) {
+    padding: 0 1rem;
+  }
+  @include deviceTBSP{
+    width: 81.3%;
+  }
+}
+
+.pc{display: block;}.sp,.ssp{display: none;}.pc-tb{  display: block;}
+@include deviceTBSP{.pc,.ssp{display: none;}.sp,.pc-tb{display: block;}}
+@include deviceSP{.sp,.ssp{display: block;}.pc-tb,.pc{display: none;}}
+
+@include deviceSP{
+  p,a,li{
+    font-size: 1.2rem;
+  }
+}

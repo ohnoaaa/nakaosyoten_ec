@@ -11,5 +11,14 @@
     "editor.defaultFormatter": "Shopify.theme-check-vscode",
     "editor.formatOnSave": true
   },
-  "themeCheck.checkOnSave": true
+  "themeCheck.checkOnSave": true,
+  "liveSassCompile.settings.formats": [
+    {
+      "format": "expanded",
+      "extensionName": ".css",
+      "savePath": "/assets"
+    }
+  ],
+  "liveSassCompile.settings.generateMap": false,
+  "liveServer.settings.port": 5501,
 }

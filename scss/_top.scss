@@ -1,0 +1,705 @@
+@use "global" as *;
+.kv{
+  height: 100vh;
+  position: relative;
+  width: 100%;
+  .kv_img{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 0;
+    img{
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      object-position: bottom;
+      @include deviceTBSP{
+        object-position: center;
+
+      }
+    }
+  }
+  .kv_bg{
+    width: 50%;
+    height: 50%;
+    max-width: 484px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50% , -50%);
+    mix-blend-mode: overlay;
+    @include deviceTBSP{
+      display: none;
+    }
+  }
+  .kv_cp{
+    z-index: 10;
+    font: 600 3.7vw/1.24 shippori-mincho, sans-serif;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50% , -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* margin-left: 7px; */
+    padding-left: 3%;
+    @include deviceTBSP{
+      font-size: 12.8vw;
+      width: 100%;
+    }
+  }
+  .kv_kanban{
+    width: 282px;
+    height: 260px;
+    position: absolute;
+    left: pxtovw(72);
+    bottom: pxtovw(53);
+    img{
+      width: 282px;
+      object-fit: contain;
+    }
+    @include deviceTBSP{
+      height: pxtovw_sp(139);
+      width: pxtovw_sp(135);
+      right: pxtovw_sp(30);
+      bottom: pxtovw_sp(13);
+      left: auto;
+      img{
+        width: pxtovw_sp(139);
+
+      }
+    }
+  }
+  .kv_banner{
+    background: url(https://cdn.shopify.com/s/files/1/0705/7381/8094/files/banner.png) 0 / contain no-repeat;
+    background-position: bottom;
+    width: 331px;
+    height: 103px;
+    position: absolute;
+    right: pxtovw(40);
+    bottom: pxtovw(53);
+    padding: 2.4rem;
+    font-size: 25px;
+    font-weight: 900;
+    line-height: 1.1;
+  }
+}
+.en_ttl{
+  font: 600 10rem / 1 $big;
+  letter-spacing: .07em;
+  color: #49494A;
+  color: rgba(228,228,228,.24);
+  @include deviceTBSP{
+    font-size: 4rem;
+    color: rgba(228,228,228,.8);
+  }
+  @media screen and (max-width: 380px) {
+    font-size: 3.7rem;
+  }
+}
+.jp_ttl{
+  font: 600 2.5rem / 1.2 $font;
+  @include deviceTBSP{
+    font-size: 1.7rem;
+  }
+}
+.btn{
+  font-size: 2.5rem;
+  @include flex(start,center);
+  column-gap: 1.9rem;
+  margin-top: 4rem;
+  @include deviceTBSP{
+    column-gap: 2.7rem;
+    font-size: 1.7rem;
+  }
+  span{
+    transition: .3s;
+    img{
+      width: 46px;
+      height: 46px;
+      object-fit: contain;
+    }
+  }
+  &:hover{
+    color: #777;
+    span{
+      transform: translateX(10px);
+      
+    }
+  }
+}
+.txt{
+  margin-top: 3.4rem;
+  line-height: 4.4;
+  font-size: 1.7rem;
+  @include deviceTBSP{
+    font-size: 1.2rem;
+    line-height: 2.2;
+    letter-spacing: .1em;
+  }
+}
+/*==================================
+//
+//    about
+//
+==================================*/
+.about{
+  padding: 3rem 0 7rem;
+  // background: rgb(5,4,7);
+  // background: linear-gradient(180deg, rgba(5,4,7,1) 30%, rgba(31,31,31,1) 40%, rgba(31,31,31,1) 100%);
+  // background: linear-gradient(180deg, rgba(5,4,7,1) 10%, rgba(255,16,16,1) 20%, rgba(255,16,16,1) 100%);
+  position: relative;
+  @include deviceTBSP{
+    padding: 3rem 0 0;
+  }
+  .about_grade{
+    position: absolute;
+    height: 259px;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    background: linear-gradient(180deg, rgba(7,7,11,1) 0%, rgba(7,7,11,1) 50%, rgba(5,4,7,0) 100%);
+    @include deviceTBSP{
+      height: 130px;
+    }
+  }
+  .about_container{
+    @include flex();
+    column-gap: 4rem;
+
+    .about_img{
+      flex-basis: 50%;
+      @media screen and (max-width: 1340px) {
+        flex-basis: 43%;
+        
+      }
+      @include deviceTBSP{
+        position: absolute;
+        width: 74%;
+        z-index: -1;
+        img{
+          opacity: .6;
+        }
+      }
+    }
+    .about_text{
+      padding-top: 11rem;
+      flex-basis: 29%;
+      
+      @include deviceTBSP{
+        width: 100%;
+        flex-basis: 100%;
+        padding: 4rem 8vw;
+        .txt{
+          font: 600 1.2rem / 2.25 $font;
+          letter-spacing: .1em;
+          margin-top: pxtovw_sp(175);
+        }
+      }
+      .jp_ttl{
+        margin-top: 3.4rem;
+        @include deviceTBSP{
+          margin-top: 2.4rem;
+
+        }
+      }
+      
+      .about_copy{
+        position: absolute;
+        top: 63px;
+        right: -155px;
+        right: 7%;
+        width: 107px;
+        height: auto;
+        @include deviceTBSP{
+          width: 55px;
+          height: 218px;
+          right: 3rem;
+          top: 0;
+        }
+        img{
+          object-fit: contain;
+          width: 107px;
+          @include deviceTBSP{
+            width: 55px;
+          }
+        }
+      }
+    }
+  }
+}
+/*==================================
+//
+//    our bland
+//
+==================================*/
+.bland{
+  padding: 6rem 0 ;
+  background-image: url(https://cdn.shopify.com/s/files/1/0705/7381/8094/files/bland_beef.png) , url(https://cdn.shopify.com/s/files/1/0705/7381/8094/files/brand_bg.png);
+  background-position: center right, center center;
+  background-size: 50%, 48%;
+  background-repeat: no-repeat,no-repeat;
+  @include devicePCLG(){
+    background-position: top 60% right, top left 58%;
+  }
+  @include deviceTBSP{
+    background-image: url(https://cdn.shopify.com/s/files/1/0705/7381/8094/files/brand_bg.png) ,url(https://cdn.shopify.com/s/files/1/0705/7381/8094/files/bland_beef.png) ;
+    background-position: top 46% left -21% , top 33% right;
+    background-size: 80%, 90%;
+    .jp_ttl{
+      // margin-top: 1.5rem;
+    }
+  }
+  .bland_container{
+    width: 58%;
+    @include flex();
+    margin-top: 3rem;
+    column-gap: 9rem;
+    .copy_img{
+      margin-top: 2rem;
+      @include deviceTBSP{
+        margin-top: 13rem;
+      }
+      img{
+        width: 118px;
+        @include deviceTBSP{
+          width: pxtovw_sp(63);
+        }
+      }
+    }
+    @include deviceTBSP{
+      position: relative;
+      right: 0;
+      top: 30%;
+      width: 100%;
+      margin-top: 1.7rem;
+      .copy_img{
+        position: absolute;
+        right: 0;
+      }
+      .txt{
+        width: 65%;
+        margin-top: pxtovw_sp(261);
+      }
+    }
+  }
+}
+/*==================================
+//
+//    line up
+//
+==================================*/
+.lineup{
+  // background: linear-gradient 90% (rgba(0,0,0,1) 30%,rgba(83,83,83,1) 30%,rgba(83,83,83,1) 100% );
+  padding: 2rem 0 15.8rem;
+  position: relative;
+  margin-top: 4rem;
+  @include deviceTBSP{
+    padding: 2rem 0 3.6rem;
+  }
+  &::after{
+    content: '';
+    width: pxtovw(929);
+    height: 90%;
+    background: #393939;
+    position: absolute;
+    top: pxtovw(43);
+    right: 0;
+    z-index: 0;
+    @media screen and (min-width: 1540px) {
+      width: 60%;
+    }
+    @include deviceTBSP{
+      width: 81.9%;
+      right: auto;
+      height: 51.5%;
+      left: 50%;
+      transform: translateX( -50%);
+      bottom: 0;
+      top: auto;
+
+    }
+  }
+  .lineup_container{
+    @include flex(between,center);
+    position: relative;
+    z-index: 2;
+    @include deviceTBSP{
+      flex-direction: column;
+      justify-content: flex-start;
+      width: 100%;
+    }
+    .en_ttl{
+      white-space: nowrap;
+    }
+    .jp_ttl{
+      margin-top: 22px;
+    }
+    .lineup_txt{
+      flex-basis: 38%;
+      @include deviceTBSP{
+        width: 100%;
+      }
+      .lineup_listbox{
+        margin-top: 3.8rem;
+        width: 70%;
+        border-top: 1px solid rgba(186,186,186,.5);
+        @include deviceTBSP{
+          width: 100%;
+        }
+        .lineup_list{
+          padding: 2.5rem;
+          font-size: 2rem;
+          font-weight: 600;
+          border-bottom: 1px solid rgba(186,186,186,.5);
+          position: relative;
+          @include deviceTBSP{
+            padding: 1.7rem;
+            font-size: 1.7rem;
+          }
+          &::after{
+            content: '';
+            width: 5.6px;
+            height: 11px;
+            background: url(https://cdn.shopify.com/s/files/1/0705/7381/8094/files/list_toggle.png) 0 / contain no-repeat;
+            position: absolute;
+            right: 1.6rem;
+            top: 55%;
+            transform: translateY(-50%);
+            
+          }
+        }
+      }
+    }
+  }
+  .img_swiper{
+    flex-basis: 50%;
+    padding-top: 10rem;
+    @include deviceTBSP{
+      padding-top: 6rem;
+      width: 70%;
+    }
+    .splide__track{
+      max-width: 709px;
+      @include deviceTBSP{
+        width: 100%;
+      }
+    }
+    .splide__slide{
+      width: 219px;
+      img {
+        height: auto;
+        width: 100%;
+      }
+    }
+    .lineup_name{
+      color: #fff;
+      font-size: 1.7rem;
+      margin-top: 2rem;
+      letter-spacing: .075;
+      text-align: center;
+    }
+  }
+  .button {
+    background-color: transparent; /* ボタンの背景を透明にする */
+    height: 48px;
+    transition: .2s;
+    width: 48px;
+    top: auto;
+    bottom: -9.7rem;
+    @include deviceTBSP{
+      transform: translateY(-50%);
+      top: 50%;
+      bottom: auto;
+    }
+  }
+  /* 矢印共通のスタイル */
+  .button::before {
+    background-repeat: no-repeat;
+    background-size: contain;
+    bottom: 0;
+    content: "";
+    height: 50px;
+    left: 0;
+    margin: auto;
+    position: absolute;
+    top: auto;
+    width: 50px;
+  }
+  /* 前の矢印 */
+  .prev::before {
+    background: url(https://cdn.shopify.com/s/files/1/0705/7381/8094/files/prev_btn.png) 0 / contain no-repeat;
+    &:hover{
+      opacity: .7;
+    }
+  }
+  /* 次の矢印 */
+  .next::before {
+    background: url(https://cdn.shopify.com/s/files/1/0705/7381/8094/files/next_btn.png) 0 / contain no-repeat;
+    &:hover{
+      opacity: .2;
+    }
+  }
+  .prev{
+    left: 0;
+    @include deviceTBSP{
+      left: -6rem;
+    }
+    @include deviceSP{
+      left: -32%;
+    }
+  }
+  .next{
+    right: auto;
+    left: 6rem;
+    @include deviceTBSP{
+      right: -6rem;
+      left: auto;
+    }
+    @include deviceSP{
+      right: -32%;
+    }
+  }
+  /* 次のスライドが無い場合の矢印 */
+  .button:disabled::before {
+    opacity: .5;
+  }
+}
+/*==================================
+//
+//    お肉のアニメーション
+//
+==================================*/
+.beef_anime{
+  // height: 150px;
+  // background: #ccc;
+  position: relative;
+  .grade{
+    position: absolute;
+    height: 144px;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    // background: linear-gradient(180deg, rgba(5,4,7,1) 30%, rgba(31,31,31,1) 40%, rgba(31,31,31,1) 100%);
+    // background: linear-gradient(180deg, rgba(255,31,31,1) 0%, rgba(255,31,31,1) 50%, rgba(255,31,31,0) 100%);
+    background: linear-gradient(180deg, rgba(31,31,31,1) 0%, rgba(31,31,31,1) 50%, rgba(31,31,31,0) 100%);
+    // background: linear-gradient(180deg, rgba(7,7,11,1) 50%, rgba(5,4,7,0) 100%);
+  }
+  video{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+    @include deviceTBSP{
+      height: 390px;
+    }
+    @include deviceSP{
+      height: 290px;
+    }
+  }
+}
+/*==================================
+//
+//    qanda Q & A
+//
+==================================*/
+.qa{
+  .img_curve{
+    width: 100%;
+    position: relative;
+    z-index: 10;
+    top: -80px;
+    height: 78px;
+    @include deviceTBSP{
+      height: 40px;
+      top: -39px;
+    }
+    img{
+      height: 78px;
+      object-fit: cover;
+      object-position: top;
+      @include deviceTBSP{
+        height: 40px;
+      }
+    }
+  }
+  .qa_container{
+    padding: 10rem 7rem 5rem;
+    margin-bottom: 6%;
+    @include flex(between,center);
+    border-bottom: $border_thin;
+    @include deviceTBSP{
+      padding: 6rem 0 4rem;
+      margin-bottom: 0;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  .qa_box{
+    @include deviceTBSP{
+      .en_ttl{
+        text-align: center;
+      }
+    }
+    .jp_txt{
+      margin-top: 2rem;
+      font: 600 1.7rem / 1.4 $font;
+      @include deviceTBSP{
+        font-size: 1.3rem;
+      }
+    }
+  }
+  @include deviceTBSP{
+    .btn{
+      margin-top: 2.5rem;
+    }
+  }
+}
+/*==================================
+//
+//    info
+//
+==================================*/
+.info{
+  background: #000;
+  @include deviceTBSP{
+    padding: 4rem 0;
+    margin-top: 4.2rem;
+    .wrapper-sp{
+      width: 81%;
+      margin: 0 auto;
+    }
+  }
+  .info_container{
+    max-width: 1400px;
+    margin: 10rem auto 0;
+    @include flex(between,center);
+    @include deviceTBSP{
+      margin: 0 auto 0;
+      flex-direction: column;
+    }
+
+    .info_box{
+      padding: 7rem 5vw;
+      flex: 1;
+      position: relative;
+      @include deviceTBSP{
+        padding: 1.3rem 0;
+        width: 100%;
+      }
+      &::after{
+        content: '';
+        height: 80%;
+        width: 1px;
+        background: rgba(186,186,186,.5);
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 0;
+        @include deviceTBSP{
+          content: none;
+        }
+      }
+      &:last-child::after{
+        content: none;
+      }
+    }
+    .btn{
+      font-size: 2rem;
+      justify-content: space-between;
+      margin: 0;
+      @include deviceTBSP{
+        font-size: 1.3rem;
+      }
+    }
+  }
+}
+/*==================================
+//
+//    cta
+//
+==================================*/
+.cta{
+  margin: 11rem auto 0;
+  position: relative;
+  @include deviceTBSP{
+    margin: 5rem auto 0;
+  }
+  &::before{
+    content: '';
+    width: pxtovw(913);
+    height: 45rem;
+    background: #000;
+    position: absolute;
+    left: pxtovw(130);
+    left: 12%;
+    top: 0;
+    z-index: 0;
+    @include deviceTBSP{
+      height: pxtovw_sp(197);
+      max-height: 200px;
+      left: 0;
+      width: 90%;
+      top: 20px;
+    }
+  }
+  .cta_container {
+    @include flex(start, center);
+    gap: pxtovw(105);
+    position: relative;
+    z-index: 2;
+    @include deviceTBSP{
+      margin-left: 10%;
+      
+    }
+    .cta_txt {
+      padding-bottom: 4rem;
+      border-bottom: $border_thin;
+      // width: 100%;
+      flex-basis: 50%;
+      @include deviceTBSP{
+        border-bottom: none;
+      }
+      .en_ttl {
+        font-size: 7.6rem;
+        text-align: right;
+        @include deviceTBSP{
+          text-align: left;
+          font-size: 4rem;
+        }
+        
+      }
+      .btn{
+        margin-top: 1rem;
+        justify-content: flex-end;
+        @include deviceTBSP{
+          justify-content: flex-start;
+          margin-top: 4rem;
+        }
+      }
+    }
+    .cta_img {
+      flex-basis: 45%;
+      max-width: 500px;
+      padding: 8rem 0;
+      @include deviceTBSP{
+        position: absolute;
+        width: 54%;
+        right: 0;
+        top: 63%;
+        transform: translateY(-50%);
+        z-index: -1;
+        padding: 0;
+        img{
+          height: 110px;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+}

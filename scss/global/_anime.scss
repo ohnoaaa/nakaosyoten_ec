@@ -1,0 +1,89 @@
+/* ---------------------------------------------
+アニメーション
+-----------------------------------------------*/
+
+.fadeRightTrigger,
+.fadeLeftTrigger,
+.fadeUpTrigger,.fadeInTrigger{
+	opacity: 0;
+}
+.fadeUp{
+	animation-name:fadeUpAnime;
+	animation-duration:0.5s;
+	animation-fill-mode:forwards;
+	opacity:0;
+	backface-visibility:hidden;
+}
+
+@keyframes fadeUpAnime{
+	from {
+		opacity: 0;
+		transform: translateY(100px);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+.fadeLeft{
+	animation-name:fadeLeftAnime;
+	animation-duration:0.9s;
+	animation-fill-mode:forwards;
+	opacity:0;
+	backface-visibility:hidden;
+}
+
+@keyframes fadeLeftAnime{
+	from {
+		opacity: 0;
+		transform: translateX(-100px);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+.fadeRight{
+	animation-name:fadeRightAnime;
+	animation-duration:0.5s;
+	animation-fill-mode:forwards;
+	opacity:0;
+	backface-visibility:hidden;
+}
+
+@keyframes fadeRightAnime{
+	from {
+		opacity: 0;
+		transform: translateX(100px);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+.fadeIn{
+	animation-name:fadeInAnime;
+	animation-duration:0.5s;
+	animation-fill-mode:forwards;
+	opacity:0;
+	backface-visibility:hidden;
+}
+
+@keyframes fadeInAnime{
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+		transform: tranlateX(0);
+	}
+}
+.delay02{
+  animation-delay: .2s;
+}

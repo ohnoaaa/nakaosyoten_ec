@@ -1,0 +1,1510 @@
+@use "global" as *;
+.sub_ttl{
+  font: 700 7.3rem / 1.2 $big;
+}
+
+.pages_bg_sp{
+  @include deviceTBSP{
+    background: url(../images/pages_bg_sp.png) repeat-y;
+    background: url(../images/pages_bg_sp.png) no-repeat;
+    background-size: cover;
+    background-size: 100%;
+  }
+}
+
+/*==================================
+//
+//    about
+//
+==================================*/
+.about_head{
+  width: 100%;
+  height: pxtovw(720);
+  position: relative;
+  @include deviceTBSP{
+    height: pxtovw_sp(300);
+  }
+  .head_img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    img{
+      height: pxtovw(720);
+      object-fit: cover;
+      object-position: bottom;
+      @include deviceTBSP{
+        height: pxtovw_sp(216);
+      }
+    }
+  }
+  .head_ttl_box{
+    padding: 16.6rem 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 10%;
+    @include deviceTBSP{
+      padding: 0;
+      transform: none;
+      top: 39%;
+    }
+    .head_inner_box{
+      margin-left: pxtovw(156);
+      width: 424px;
+      position: relative;
+      z-index: 100;
+      mix-blend-mode: normal;
+      @include deviceTBSP{
+        width: pxtovw_sp(197);
+        margin-left: pxtovw_sp(24);
+      }
+      .sub_ttl{
+        padding-bottom: 1rem;
+        border-bottom: 1px solid #fff;
+        @include deviceTBSP{
+          font-size: 4rem;
+        }
+      }
+      .subttl_jp{
+        margin-top: 2rem;
+        font: 600 2rem / 1.4 $font;
+        @include deviceTBSP{
+          font-size: 1.3rem;
+          margin-top: 1.3rem;
+        }
+      }
+    }
+  }
+  .head_bg{
+    width: 484px;
+    height: 484px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    mix-blend-mode: overlay;
+    margin-left: pxtovw(156);
+    @media screen and (max-width:900px ) {
+      width: 400px;
+      height: 400px;
+    }
+    @include deviceTBSP{
+      height: pxtovw_sp(197);
+      width: pxtovw_sp(197);
+      margin-left: 0;
+      transform: none;
+      top: 22%;
+    }
+    img{
+      object-fit: contain;
+      @include deviceTBSP{
+        height: pxtovw_sp(197);
+        width: pxtovw_sp(197);
+      }
+    }
+  }
+
+}
+.story{
+  @include deviceSP{
+    .wrapper{
+      width: 93%;
+    }
+  }
+  .story_ttl{
+    background: url(../images/about_story_ttl.png) 0 / contain no-repeat;
+    width: 100%;
+    font: 600 2.5rem / 1.2 $font;
+    text-align: center;
+    padding: 4.3rem 0 5rem;
+    background-position: top 0 center;
+    @include deviceTBSP{
+      background: url(../images/about_story_ttlsp.png) 0 / contain no-repeat;
+      padding: 6.4rem 0 0;
+      font-size: 1.3rem;
+      background-position: top;
+    }
+  }
+  .story_container{
+    margin-top: 8.7rem;
+    @include flex(between,start);
+    margin-left: 12%;
+    padding-bottom: 17rem;
+    @include deviceTBSP{
+      flex-direction: column-reverse;
+      margin: 2.5rem 0 3.7rem;
+      padding-bottom: 3.4rem;
+      gap: 3.2rem;
+    }
+  }
+  .story_box{
+    flex-basis: 44%;
+    @include deviceTBSP{
+      width: 81%;
+      margin: 0 auto;
+    }
+    .txt{
+      line-height: 2.7;
+      letter-spacing: .075em;
+      @include deviceTBSP{
+        margin-top: 2.4rem;
+      }
+    }
+  }
+  .story_inner_ttl{
+    font: 600 5.3rem / 1.4 $font;
+    letter-spacing: .075em;
+    @include deviceTBSP{
+      font-size: 2rem;
+    }
+  }
+  .story_img{
+    flex-basis: 48.5%;
+    @include deviceTBSP{
+      width: 100%;
+      img{
+        height: pxtovw_sp(194);
+        object-fit: cover;
+      }
+    }
+  }
+  .reverse{
+    flex-direction: row-reverse;
+    margin: 0;
+    background: #2E2E2E;
+    padding: 12.8rem 0 8rem;
+    gap: 8rem;
+    @include deviceTBSP{
+      padding: 5rem 0 7rem;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 0;
+    }
+    .story_inner_ttl{
+      font-size: 3.5rem;
+      @include deviceTBSP{
+        order: 1;
+        font-size: 2rem;
+        margin: 0 auto 0 9.5%;
+        
+      }
+    }
+    .story_box{
+      margin-right: 12%;
+      @include deviceTBSP{
+        display: contents;
+        .txt{
+          order: 3;
+          width: 81%;
+          margin: 0 auto;
+        }
+      }
+    }
+    .story_img{
+      @include deviceTBSP{
+        order: 2;
+        margin-left: 9.5%;
+        margin: 2.4rem;
+      }
+      @include deviceSP{
+        width: 90%;
+        margin-right: 0;
+      }
+    }
+  }
+  .story_box_03{
+    margin-top: 10.7rem;
+    @include deviceTBSP{
+      margin-top: 5rem;
+      margin: 5rem auto 0;
+      width: 93%;
+      .txt{
+        margin-top: 2rem;
+        width: 100%;
+        padding: 0;
+      }
+    }
+    .story_inner_ttl{
+      font-size: 3.5rem;
+      @include deviceTBSP{
+        font-size: 2rem;
+      }
+    }
+  }
+}
+/*==================================
+//
+//    佐賀牛について
+//
+==================================*/
+
+.sagabeef_head{
+  // .subhead_container{
+  //   @include flex(between,center);
+  // }
+  @include deviceTBSP{
+    height: pxtovw_sp(394);
+    .head_img{
+      height: pxtovw_sp(242);
+
+    }
+  }
+  .head_ttl_box{
+    padding: 0;
+    top: 45%;
+    mix-blend-mode: normal;
+    @include deviceTBSP{
+      top: 26%;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+  .head_ttl_box .head_inner_box{
+    margin-left: 0;
+    @include deviceTBSP{
+      width: 100%;
+    }
+  }
+  .sub_jp{
+    font: 600 5rem / 1.2 $font;
+    @include deviceTBSP{
+      font-size: 2rem;
+    }
+  }
+  .subhead_nav{
+    position: absolute;
+    top: 45%;
+    transform: translateY(-50%);
+    right: 12%;
+    @include deviceTBSP{
+      width: 81%;
+      top: 66%;
+      left: 9.5%;
+    }
+    ul{
+      @include flex();
+      flex-direction: column;
+      width: pxtovw(424);
+      @include deviceTBSP{
+        width: 100%;
+      }
+      li{
+        border-bottom: 1px solid #fff;
+      }
+      .btn{
+        justify-content: space-between;
+        margin: 0;
+        padding: 3rem 0;
+        @include deviceTBSP{
+          padding: 1.1rem 0;
+        }
+      }
+    }
+  }
+}
+.sagabeef_about{
+  @include deviceSP{
+    overflow: hidden;
+  }
+  .sagabeef_contents_01{
+    position: relative;
+    padding: 9rem 0 6rem;
+    @include deviceTBSP{
+      padding: 12rem 0 6rem;
+    }
+    .sagabeef_bg01{
+      position: absolute;
+      width: pxtovw(814);
+      right: 0;
+      z-index: -1;
+      top: -3%;
+      @include deviceTBSP{
+        width: pxtovw_sp(271);
+        left: 50%;
+        transform: translate(-50%, -50%);
+        right: auto;
+        top: 50%;
+      }
+      img{
+        opacity: .56;
+        @include deviceTBSP{
+          opacity: .46;
+
+        }
+      }
+    }
+    .sagabeef_bg02{
+      position: absolute;
+      width: 363px;
+      top: -5rem;
+      left: 7%;
+      @include deviceTBSP{
+        width: 353px;
+        left: -14%;
+        top: 1rem;
+      }
+    }
+    .sagabeef_txt01{
+      padding-left: 2rem;
+      width: 44%;
+      @include deviceTBSP{
+        padding-left: 0;
+        width: 100%;
+      }
+      .sagabeef_ttl{
+        font: 600 3.6rem / 1.3 $font;
+        @include deviceTBSP{
+          font-size: 2.5rem;
+        }
+      }
+      .sagabeef_lead{
+        margin-top: 6.6rem;
+        font: 600 2.5rem / 2.7 $font;
+        @include deviceTBSP{
+          margin-top: 4.2rem;
+          font-size: 1.7rem;
+          line-height: 1.5;
+        }
+      }
+      .sagabeef_txt{
+        margin-top: 3rem;
+        font: 600 1.7rem / 2.7 $font;
+        @include deviceTBSP{
+          margin-top: 15rem;
+          font-size: 1.2rem;
+          line-height: 2.25;
+        }
+      }
+    }
+  }
+  .sagabeef_contents_02{
+    position: relative;
+    @include deviceTBSP{
+      padding: 0;
+    }
+    .sagabeef_bg01{
+      position: absolute;
+      width: pxtovw(685);
+      height: pxtovw(685);
+      left: 0;
+      @include deviceTBSP{
+        width: pxtovw_sp(447);
+        height: pxtovw_sp(447);
+        left: 50%;
+        transform: translate(-50%, 0);
+        top: -15%;
+
+      }
+      @include deviceSP{
+        top: -3%;
+
+      }
+      img{
+        height: 685px;
+        height: pxtovw(685);
+        opacity: 1;
+        object-fit: contain;
+        @include deviceTBSP{
+          width: pxtovw_sp(447);
+          height: pxtovw_sp(447);
+          opacity: .77;
+        }
+      }
+    }
+    .sagabeef_txt01{
+      margin: 0 0 0 auto;
+      @include deviceTBSP{
+        .sagabeef_ttl{
+          text-align: center;
+          line-height: 1.5;
+          font-size: 2rem;
+        }
+        .sagabeef_txt{
+          margin-top: pxtovw_sp(270);
+        }
+        .sp_txt{
+          margin-top: 2.4rem;
+        }
+      }
+      .sagabeef_lead{
+        line-height: 1.52;
+      }
+      .second{
+        margin-top: 10.3rem;
+        @include deviceTBSP{
+          margin-top: 6rem;
+          
+        }
+        
+      }
+    }
+  }
+  .sagabeef_contents_03{
+    // height: 921px;
+    margin-top: 15rem;
+    padding: 0;
+    @include deviceTBSP{
+      margin-top: 12rem;
+    }
+    .sagabeef_bg01{
+      width: pxtovw(571);
+      height: pxtovw(530);
+      right: 8%;
+      z-index: -1;
+      top: 15%;
+      @include deviceTBSP{
+        width: pxtovw_sp(275.6);
+        height: pxtovw_sp(255);
+        top: 35%;
+      }
+      @include deviceSP{
+        width: pxtovw_sp(275.6);
+        height: pxtovw_sp(255);
+        top: 54%;
+      }
+      img{
+        height: pxtovw(530);
+        @include deviceTBSP{
+          height: pxtovw_sp(255);
+        }
+      }
+    }
+    .sagabeef_bg02{
+      width: pxtovw(745);
+      left: 0;
+      height: pxtovw(465);
+      bottom: 0;
+      top: auto;
+      img{
+        height: pxtovw(465);
+        max-height: 465px;
+        object-fit: cover;
+        object-position: bottom;
+
+      }
+    }
+    .sagabeef_bg03{
+      width: pxtovw(1310);
+      height: 628px;
+      background: rgba(57,57,57,.6);
+      position: absolute;
+      right: 0;
+      z-index: -2;
+      @media screen and (max-width:1200px) {
+        width: 95%;
+      }
+      @include deviceTBSP{
+        height: 136.5vw;
+      }
+      @include deviceSP{
+        height: pxtovw_sp(767);
+      }
+    }
+    .sagabeef_txt01{
+      // padding-left: 40px;
+      padding-top: 10rem;
+      padding-left: 0;
+      @include deviceTBSP{
+        padding: 3.8rem 0;
+      }
+      .sagabeef_ttl,.sagabeef_txt{
+        margin-left: 24%;
+        @include devicePCLG{
+          margin-left: 32%;
+        }
+        @include deviceTBSP{
+          margin: 2.6rem 7% 0 15%;
+        }
+      }
+      @include deviceTBSP{
+        .sagabeef_ttl{
+          margin: 0 7% 0 14%;
+          font-size: 2rem;
+        }
+      }
+      .sagabeef_img{
+        margin-top: 7.6rem;
+        @include deviceTBSP{
+          margin-top: 67.7vw;
+          width: 91%;
+
+        }
+        @include deviceSP{
+          margin-top: pxtovw_sp(320);
+        }
+        img{
+          object-fit: cover;
+        }
+      }
+    }
+  }
+}
+.how_eat{
+  margin: 20.9rem auto 0;
+  position: relative;
+  padding-bottom: 17.7rem;
+  @include deviceTBSP{
+    margin-top: 4rem;
+    padding-bottom: 4.7rem;
+  }
+  &::before{
+    content: '';
+    width: pxtovw(1254);
+    height: 92%;
+    background: rgba(57,57,57,.6);
+    position: absolute;
+    top: 2.9rem;
+    left: 0;
+    z-index: -1;
+    @include deviceTBSP{
+      top: 0;
+      height: 100%;
+      width: 91%;
+    }
+  }
+  .sagabeef_ttl{
+    font: 600 3.7rem / 1.3 $font;
+    margin-top: -1.6rem;
+    @include deviceTBSP{
+      font-size: 2rem;
+      margin: 0;
+      padding-top: 4rem;
+    }
+  }
+  .how_container{
+    @include flex();
+    gap: 6rem;
+    margin-top: 12rem;
+    @include deviceTBSP{
+      flex-direction: column;
+      gap: 3.4rem;
+      margin-top: 6rem;
+    }
+    &:nth-child(2){
+      margin-top: 10rem;
+      @include deviceTBSP{
+        flex-direction: column;
+        margin-top: 3rem;
+      }
+    }
+    .how_img{
+      flex-basis: 48%;
+      @include deviceTBSP{
+        width: 90%;
+      }
+    }
+    .how_txt{
+      flex-basis: 50%;
+      padding-right: 5rem;
+      @include deviceTBSP{
+        padding-right: 3.8rem;
+      }
+      .how_eatttl{
+        font: 600 3.6rem / 1.4 $font;
+        @include deviceTBSP{
+          font-size: 1.7rem;
+        }
+      }
+      .how_txt{
+        margin-top: 3.5rem;
+        font: 600 1.7rem / 2.7 $font;
+        @include deviceTBSP{
+          margin-top: 1.5rem;
+          font-size: 1.2rem;
+          line-height: 2.25;
+          padding-right: 0;
+        }
+      }
+    }
+  }
+}
+#kankyo,#tokucho{
+  padding-top: 8rem;
+  margin-top: -8rem;
+}
+#howeat{
+  padding-top: 20.1rem;
+  margin-top: -8rem;
+  @include deviceTBSP{
+    padding-top: 12.1rem;
+  }
+}
+/*==================================
+//
+//    下層ページ共通css
+//
+==================================*/
+//下層のみだし
+.subapge_head{
+  position: relative;
+  height: 453px;
+  .head_img{
+    width: 100%;
+    height: 453px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    @include deviceTBSP{
+      display: none;
+    }
+    img{
+      height: 453px;
+      object-fit: cover;
+    }
+  }
+  .subapge_jp{
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font: 600 2.5rem / 1.5 $font;
+    @include deviceTBSP{
+      font-size: 1.2rem;
+      letter-spacing: .1em;
+      width: 100%;
+      text-align: center;
+      top: 90%;
+    }
+    
+  }
+  .subpage_txt{
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font: 500 12.9rem / 1.4 $big;
+    letter-spacing: .07em;
+    color: rgba(228,228,228,.13);
+    width: 100%;
+    text-align: center;
+    @include deviceTBSP{
+      top: 65%;
+    }
+  }
+  .pagenav{
+    position: absolute;
+    bottom: -1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 4vw;
+    @include deviceTBSP{
+      bottom: -8.5rem;
+    }
+    gap: pxtovw_sp(50);
+    .btn{
+      width: 420px;
+      justify-content: space-between;
+      border-bottom: 1px solid rgba(255,255,255,.5);
+      padding-bottom: 1.5rem;
+      @include deviceTBSP{
+        width: pxtovw_sp(127);
+        border-bottom: none;
+        column-gap: 2.4rem;
+        span{
+          width: 30px;
+          height: 30px;
+          img{
+            height: 30px;
+            width: 30px;
+            vertical-align: sub;
+          }
+        }
+      }
+    }
+  }
+  @include deviceTBSP{
+    height: pxtovw_sp(170);
+    .subpage_txt{
+      font-size: 4rem;
+      color: rgba(228,228,228,.8);
+    }
+  }
+}
+/*==================================
+//
+//    faq
+//
+==================================*/
+@include deviceTBSP{
+  .faq_head{
+    .subapge_jp{
+      right: 14%;
+        left: auto;
+        top: 80%;
+        z-index: 10;
+        color: #fff;
+        width: fit-content;
+    }
+    .subpage_txt{
+      top: 80%;
+      left: 35%;
+    }
+  }
+}
+.faq_contents{
+  /*アコーディオン全体*/
+  width: 918px;
+  margin: 0 auto;
+  padding-bottom: 2rem;
+  @include deviceTBSP{
+    width: 81%;
+  }
+  .accordion-area li{
+    border-bottom: 1px solid #fff;
+  }
+  
+  /*アコーディオンタイトル*/
+  .title {
+    padding: 3.2rem 0;
+    position: relative;/*+マークの位置基準とするためrelative指定*/
+    cursor: pointer;
+    font-size:2rem;
+    font-weight: normal;
+    transition: all .5s ease;
+    @include deviceTBSP{
+      font-size: pxtovw_sp(12);
+      padding: 2rem 5.5rem 2.5rem 0;
+    }
+  }
+  /*アイコンの＋と×*/
+  .title::after{
+    position: absolute;
+    content:'';
+    width: 45px;
+    height: 45px;
+    background: url(../images/faq_btn.png) 0 / contain no-repeat;
+    top: 27%;
+    right: 0;  
+  }
+  .title.close::after{
+    transform: rotate(-180deg);
+  }
+  /*アコーディオンで現れるエリア*/
+  .box {
+    display: none;/*はじめは非表示*/
+    // margin:0 2rem 0;
+    padding: 3rem 1rem 4rem;
+  }
+}
+/*==================================
+//
+//      terms
+//
+==================================*/
+
+.terms_contents{
+  width: 951px;
+  margin: 0 auto;
+  @include deviceTBSP{
+    width: 81%;
+    margin-top: 8rem;
+  }
+  .terms_txt{
+    font: 600 1.7rem / 1.7 $font;
+    @include deviceTBSP{
+      font-size: 1.2rem;
+    }
+  }
+  dl{
+    margin-top: 11rem;
+    @include deviceTBSP{
+      margin-top: 5.6rem;
+    }
+    &:not(:first-child){
+      margin-top: 7.8rem;
+      @include deviceTBSP{
+        margin-top: 6.8rem;
+      }
+    }
+    .terms_t{
+      font-size: 2rem;
+      @include deviceTBSP{
+        font-size: 1.2rem;
+      }
+    }
+    .terms_d{
+      font: 600 1.7rem / 1.7 $font;
+      margin-top: 2.4rem;
+      @include deviceTBSP{
+        font-size: 1.2rem;
+        margin-top: 1.7rem;
+      }
+      ul{
+        margin-top: 3rem;
+        li{
+          
+          font: 600 1.7rem / 1.7 $font;
+          @include deviceTBSP{
+            font-size: 1.2rem;
+          }
+        }
+      }
+      a{
+        display: inline;
+        text-decoration: underline;
+      }
+      .terms_inner{
+        margin-top: 1.4rem;
+      }
+    }
+  }
+}
+/*==================================
+//
+//    company
+//
+==================================*/
+@include deviceTBSP{
+  .subapge_head .subapge_jp.terms{
+    font-size: 1.7rem;
+  }
+}
+.pages_list{
+  @include flex(between,stretch);
+  &:not(:first-child){
+    margin-top: 2rem;
+  }
+  .info_head,.contents{
+    font: 600 1.7rem / 2.7 $font;
+    padding-bottom: 1.6rem;
+    border-bottom: 1px solid rgba(255,255,255,.5);
+    @include deviceTBSP{
+      font-size: 1.2rem;
+    }
+  }
+  .info_head{
+    flex-basis: 22%;
+    @include deviceTBSP{
+      flex-basis: 28%;
+    }
+
+  }
+  .contents{
+    flex-basis: 69%;
+  }
+  
+}
+.company{ 
+  margin-top: -6rem;
+  padding-top: 20rem;
+  @include deviceTBSP{
+    padding-top: 17rem;
+  }
+  .com_ttl{
+    width: 177px;
+    height: 177px;
+    position: relative;
+    margin: 0 auto;
+    @include deviceTBSP{
+      width:pxtovw_sp(110);
+      height:pxtovw_sp(110);
+    }
+    .com_ttl_bg{
+      position: absolute;
+      width: 177px;
+      @include deviceTBSP{
+        width:pxtovw_sp(110);
+      }
+      img{
+        height: 177px;
+        mix-blend-mode: overlay;
+        @include deviceTBSP{
+          height:pxtovw_sp(110);
+        }
+      }
+    }
+  }
+  .com_ttl_txt{
+    font: 600 2.5rem / 1.3 $font;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    @include deviceTBSP{
+      font-size: 2rem;
+      letter-spacing: .1em;
+    }
+    @include deviceSP{
+      font-size: 1.5rem;
+      letter-spacing: .1em;
+    }
+  }
+  .com_contents{
+    padding: 14rem 0;
+    margin-top: -9rem;
+    background: #363636;
+    .pc{
+      margin-top: 2rem;
+    }
+    @include deviceTBSP{
+      margin-top: -10rem;
+      padding: 8rem 0 3.5rem;
+      .sp{
+        margin-top: 1.8rem;
+      }
+    }
+    @include deviceSP{
+      margin-top: -6rem;
+
+    }
+  }
+  .inner_contents{
+    width: 822px;
+    margin: 0 auto;
+    @include deviceTBSP{
+      width: 85%;
+    }
+    .shop_info{
+      @include flex(start,center);
+      gap: 4.2rem;
+      @include deviceTBSP{
+        flex-direction: column;
+        align-items: flex-start;
+        gap:3px;
+      }
+      .shopname{
+        font: 600 2.5rem / 1.52 $font;
+        @include deviceTBSP{
+          font-size: 1.7rem;
+        }
+      }
+      address{
+        font-size: 1.7rem;
+        @include deviceTBSP{
+          font-size: 1.2rem;
+        }
+      }
+    }
+    .shop_map{
+      width: 100%;
+      margin-top: 3.5rem;
+      @include deviceTBSP{
+        margin-top: 1.7rem;
+      }
+      iframe{
+        width: 100%;
+        height: 354px;
+        @include deviceTBSP{
+          height: pxtovw_sp(165);
+        }
+      }
+    }
+  }
+  .shopsecond{
+    margin-top: 16rem;
+    @include deviceTBSP{
+      margin-top: 3.5rem;
+    }
+  }
+
+}
+/*==================================
+//
+//      terms
+//
+==================================*/
+@include deviceTBSP{
+  .subapge_head .subpage_txt.policy{
+    top: 76%;
+  }
+  .subapge_head .subapge_jp.policy_jp{
+    top: auto;
+    bottom: -5rem;
+  }
+  .wrapper_terms{
+    width: 87%;
+  }
+  .subapge_head .subapge_jp.terms{
+    top: 67%;
+    transform: translateY(0%);
+    left: auto;
+  }
+}
+.terms{
+  @include deviceTBSP{
+    .com_contents{
+      padding: 3.7rem 2.3rem;
+    }
+  }
+  .inner_contents{
+    width: 850px;
+    @include deviceTBSP{
+      width: 100%;
+    }
+    .pages_list{
+      gap: 3vw;
+      justify-content: space-between;
+      .info_head{
+        flex-basis: 28%;
+      }
+      .contents{
+        flex-basis: 72%;
+      }
+      @include deviceTBSP{
+        flex-direction: column;
+        gap: 0;
+        .info_head{
+          padding-bottom: 0;
+          border-bottom: none;
+        }
+        .contents{
+          color: #A8A8A8;
+          padding-bottom: 2rem;
+          line-height: 1.4;
+        }
+      }
+    }
+    
+  }
+}
+/*==================================
+//
+//      contact
+//
+==================================*/
+.contact{
+  .contact_lead{
+    width: fit-content;
+    margin: 0 auto;
+    font: 600 1.7rem / 2.7 $font
+  }
+  .contact_form{
+    width: 852px;
+    margin: 12rem auto 0;
+    @include deviceTBSP{
+      width: 100%;
+      margin: 5.6rem auto 0;
+    }
+    .form-group{
+      display: flex;
+      flex-direction: column;
+      gap: 2.3rem;
+      margin-top: 4.7rem;
+      @include deviceTBSP{
+        gap: 1.1rem;
+        margin-top: 2.2rem;
+      }
+      label{
+        font: 600 1.7rem / 1.5 $font;
+      }
+      input,select{
+        background: #434343;
+        font: 600 1.7rem / 1.5 $font;
+        padding: 1rem 1.6rem;
+        cursor: pointer;
+        font-family: "Shippori Mincho", serif;
+      }
+      select::-ms-expand {
+        display: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+      }
+      
+      textarea{
+        width: 100%;
+        background: #434343;
+        display: inline-block;
+        height: 377px;
+        @include deviceTBSP{
+          height: 198px;
+        }
+      }
+    }
+    .policy_check{
+      margin-top: 8.6rem;
+      @include flex(center,start);
+      @include deviceTBSP{
+        margin-top: 3rem;
+      }
+      input[type=checkbox]{
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        width: 25px;
+        height: 25px;
+        background: #434343;
+        cursor: pointer;
+      }
+      input[type=checkbox]:checked{
+        position: relative;
+        background: #000;
+        &::after{
+          content: "";
+          display: block;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          width: 40%;
+          height: 4px;
+          border-radius: 2px;
+          transform: translate(-6px, 5px) rotateZ(-135deg);
+          transform-origin: 2px 2px;
+          background: #FFFFFF;
+        }
+        &::before{
+          content: "";
+          display: block;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          width: 76%;
+          height: 4px;
+          border-radius: 2px;
+          transform: translate(-6px, 5px) rotateZ(-45deg);
+          transform-origin: 2px 2px;
+          background: #FFFFFF;
+        }
+      }
+      label{
+        font-size: 1.7rem;
+        margin-left: 1.6rem;
+        @include deviceTBSP{
+          font-size: 1.2rem;
+          line-height: 2;
+        }
+        a{
+          display: inline-block;
+          border-bottom: 1px solid rgba(255,255,255,.5);
+        }
+      }
+    }
+    .address_box{
+      margin-top: 4.7rem;
+      font-weight: 600;
+      @include deviceTBSP{
+        margin-top: 3.5rem;
+        .form_ttl{
+          font-size: 1.7rem;
+        }
+      }
+      .form-group{
+        margin-top: 3rem;
+        display: flex;
+        flex-direction: row;
+        @include deviceTBSP{
+          flex-direction: column;
+          margin-top: 2rem;
+
+        }
+        label{
+          flex-basis: 20%;
+          @include deviceTBSP{
+            font-size: 1.5rem;
+          }
+        }
+        input,select{
+          flex-basis: 80%;
+          width: 100%;
+          @include deviceTBSP{
+            background: #343434;
+          }
+        }
+        select{
+          background: url('../images/form_toggle.png') 0 / contain no-repeat , #434343 ;
+          background-position: right , right;
+          @include deviceTBSP{
+            background: url('../images/form_toggle.png') 0 / contain no-repeat , #343434 ;
+          }
+        }
+      }
+    }
+    /* 送信ボタン */
+    .submit-btn {
+      /* buttonタグのリセットCSS */
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      outline: none;
+      appearance: none;
+      color: #fff;
+      padding: 8px 24px;
+      background-color: #3abec1;
+      background: linear-gradient(135deg, rgba(98,98,98,1) 0%, rgba(60,60,60,1) 100%);
+      cursor: pointer; /* ポインターカーソルを表示 */
+      transition: .3s;
+      font-size: 2rem;
+      width: 263px;
+      margin: 6.5rem auto 0;
+      text-align: center;
+      display: block;
+      @include deviceTBSP{
+        font-size: 1.7rem;
+      }
+    }
+    
+    .submit-btn[disabled] {
+      background: #777;
+      cursor: not-allowed; /* クリック不可のカーソルを表示 */
+    }
+  }
+}
+/*==================================
+//
+//        item
+//
+==================================*/
+@include deviceTBSP{
+  .item_sp{
+    margin-top: 9.7rem;
+    text-align: center;
+    .item_name{
+      font-size: 2rem;
+    }
+    .item_gram{
+      font-size: 1.2rem;
+      margin-top: 1.5rem;
+    }
+  }
+  .item_img{
+    margin: 3.6rem auto 3rem;
+  }
+}
+.item{
+  margin-top: 17rem;
+  @include deviceTBSP{
+    margin-top: 3.5rem;
+
+  }
+  .item_container{
+    @include flex(between,start);
+    @include deviceTBSP{
+      flex-direction: column;
+    }
+  }
+  .item_img{
+    flex-basis: 45%;
+  }
+  .item_num{
+    font-size: 1.7rem;
+  }
+  .item_lead{
+    margin-top: 1.6rem;
+    color: rgba(255,255,255,.65);
+    @include deviceTBSP{
+      color: #fff;
+    }
+  }
+  .item_name{
+    margin-top: 3.8rem;
+    font: 600 2.5rem / 1.7 $font;
+  }
+  .item_txt_box{
+    flex-basis: 50%;
+    font-size: 1.7rem;
+
+    .item_gram{
+      margin-top: 2.6rem;
+    }
+    .item_info{
+      background: rgba(12,10,11,.63);
+      padding: 5.6rem 6.7rem;
+      margin-top: 4.8rem;
+      @include deviceTBSP{
+        margin-top: 2rem;
+        padding: 3.6rem 2.6rem 3rem;
+      }
+      .price{
+        font-size: 2.5rem;
+        @include deviceTBSP{
+          font-size: 2rem;
+        }
+      }
+      .cost{
+        margin-top: 1.9rem;
+        @include deviceTBSP{
+          margin-top: 1.1rem;
+          font-size: 1.1rem
+
+        }
+      }
+      .counter{
+        @include flex(start,center);
+        gap: 2rem;
+        margin-top: 2.4rem;
+        @include deviceTBSP{
+          gap: 2rem;
+          margin-top: 1.7rem;
+          .count_name{
+            font-size: 1.1rem;
+            flex-basis: 12%;
+            @include deviceSP{
+              flex-basis: 14%;
+          
+            }
+          }
+        }
+        @include deviceSP{
+          
+          gap: .4rem;
+        }
+        .value{
+          background:  url(../images/counter_btn.png) 0 / contain no-repeat , #313131;
+          background-size: 20px , 100%;
+          background-position: right 20px center , top;
+          border: 1px solid #6A6A6A;
+          width: 150px;
+          padding: .8rem 1.6rem;
+          @include deviceTBSP{
+            width: 100%;
+            font-size: 1.1rem;
+            background-size: 10px , 100%;
+          }
+          
+        }
+      }
+      .item_btn{
+        background: #0A0A08;
+        text-align: center;
+        width: 100%;
+        padding: 1.8rem 2rem;
+        margin: 2.3rem auto 0;
+        @include deviceTBSP{
+          font-size: 1.1rem;
+        }
+        &:hover{
+          background: #D0B775;
+          color: #000;
+        }
+      }
+    }
+    .item_txt_box{
+      @include deviceTBSP{
+        margin-top: 3.8rem;
+      }
+    }
+  }
+  
+}
+.other_items{
+  background: #2C2C2C;
+  margin-top: 12rem;
+  padding: 10rem 3rem 9rem;
+  @include deviceTBSP{
+    margin-top: 5rem;
+    padding: 3.3rem 2rem 5.6rem;
+
+  }
+  .items_list{
+    @include flex(center,start);
+    gap: 3rem;
+    max-width: 834px;
+    margin: 0 auto;
+    .other_item{
+      .lineup_name{
+        text-align: center;
+        margin-top: 3.3rem;
+      }
+    }
+  }
+  .img_swiper{
+    // flex-basis: 50%;
+    // padding-top: 10rem;
+    @include deviceTBSP{
+      width: 60%;
+      margin: 0 auto;
+    }
+    .splide__track{
+      max-width: 834px;
+      margin: 0 auto;
+      @include deviceTBSP{
+        width: 100%;
+        
+      }
+    }
+    .splide__slide{
+      width: 219px;
+      img {
+        height: auto;
+        width: 100%;
+      }
+    }
+    .lineup_name{
+      color: #fff;
+      font-size: 1.7rem;
+      margin-top: 2rem;
+      letter-spacing: .075;
+      text-align: center;
+      @include deviceTBSP{
+        font-size: 1.4rem;
+      }
+    }
+  }
+  .button {
+    background-color: transparent; /* ボタンの背景を透明にする */
+    height: 48px;
+    transition: .2s;
+    width: 48px;
+    top: auto;
+    bottom: -9.7rem;
+    display: none;
+    @include deviceTBSP{
+      display: block;
+      transform: translateY(-50%);
+      top: 50%;
+      bottom: auto;
+    }
+  }
+  /* 矢印共通のスタイル */
+  .button::before {
+    background-repeat: no-repeat;
+    background-size: contain;
+    bottom: 0;
+    content: "";
+    height: 50px;
+    left: 0;
+    margin: auto;
+    position: absolute;
+    top: auto;
+    width: 50px;
+  }
+  /* 前の矢印 */
+  .prev::before {
+    background: url(../images/prev_btn.png) 0 / contain no-repeat;
+    &:hover{
+      opacity: .7;
+    }
+  }
+  /* 次の矢印 */
+  .next::before {
+    background: url(../images/next_btn.png) 0 / contain no-repeat;
+    &:hover{
+      opacity: .2;
+    }
+  }
+  .prev{
+    left: 0;
+    @include deviceTBSP{
+      left: -6rem;
+    }
+  }
+  .next{
+    right: auto;
+    left: 6rem;
+    @include deviceTBSP{
+      right: -6rem;
+      left: auto;
+    }
+  }
+  /* 次のスライドが無い場合の矢印 */
+  .button:disabled::before {
+    opacity: .5;
+  }
+  @include deviceTBSP{
+    .splide__pagination{
+      bottom: -2rem;
+      gap: 7px;
+      opacity: 1;
+    }
+    .splide__pagination__page{
+      opacity: 1;
+      background: #757575;
+    }
+    .splide__pagination__page.is-active {
+      background: #fff;
+      transform: scale(1);
+    }
+  }
+}
