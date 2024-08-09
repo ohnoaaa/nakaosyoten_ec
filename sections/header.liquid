@@ -1,13 +1,13 @@
 <header class="header">
   <h1 class="logo">
-    <a href="index.html">ナカオ商店 <span>ONLINE SHOP</span></a>
+    <a href="{{ shop.url }}">ナカオ商店 <span>ONLINE SHOP</span></a>
   </h1>
   <nav id="g-nav">
     <ul class="nav_container">
-      <li class="pc"><a href="index.html" class="link">TOP</a></li>
-      <li class="pc"><a href="about.html" class="link">ABOUT</a></li>
-      <li class="sp"><a href="about.html" class="link">ナカオ商店について</a></li>
-      <li><a href="sagabeef.html" class="link">佐賀牛について</a></li>
+      <li class="pc"><a href="{{ shop.url }}" class="link">TOP</a></li>
+      <li class="pc"><a href="{{ pages.about.url }}" class="link">ABOUT</a></li>
+      <li class="sp"><a href="{{ pages.about.url }}" class="link">ナカオ商店について</a></li>
+      <li><a href="{{ pages.sagabeef.url }}" class="link">佐賀牛について</a></li>
       <li class="has_child nav_link">
         <a href="/" class="link">LINE UP</a>
         <ul class="nav_child">
@@ -16,21 +16,21 @@
           <li><a href="item.html" class="child_link">モモ〇〇g</a></li>
         </ul>
       </li>
-      <li class="sp"><a href="faq.html" class="link">よくある質問</a></li>
-      <li class="pc"><a href="faq.html" class="link">Q&A</a></li>
-      <li class="sp"><a href="company.html" class="link">会社概要</a></li>
-      <li class="sp"><a href="policy.html" class="link">プライバシーポリシー</a></li>
-      <li class="sp"><a href="terms.html" class="link">特定商取引法に基づく表記</a></li>
-      <li><a href="contact.html" class="link">CONTACT</a></li>
+      <li class="sp"><a href="{{ pages.faq.url }}" class="link">よくある質問</a></li>
+      <li class="pc"><a href="{{ pages.faq.url }}" class="link">Q&A</a></li>
+      <li class="sp"><a href="{{ pages.company.url }}" class="link">会社概要</a></li>
+      <li class="sp"><a href="{{ pages.policy.url }}" class="link">プライバシーポリシー</a></li>
+      <li class="sp"><a href="{{ pages.terms.url }}" class="link">特定商取引法に基づく表記</a></li>
+      <li><a href="{{ pages.contact.url }}" class="link">CONTACT</a></li>
       <li class="pc">
-        <a href="login.html" class="icon_link"
+        <a href="/account/login" class="icon_link"
           ><img
             src="https://cdn.shopify.com/s/files/1/0705/7381/8094/files/login_icon_84756513-441f-4877-a8f2-a7f498fd91e7.png?v=1723105448"
             alt="ログイン"
         ></a>
       </li>
       <li class="pc">
-        <a href="cart.html" class="icon_link"
+        <a href="/cart" class="icon_link"
           ><img
             src="https://cdn.shopify.com/s/files/1/0705/7381/8094/files/cart_icon_707dc881-055b-47e3-a9d1-348bce29c72b.png?v=1723105434"
             alt="カート"
@@ -38,14 +38,14 @@
       </li>
     </ul>
     <div class="sp_btn">
-      <a href="login.html" class="icon_link"
+      <a href="/account/login" class="icon_link"
         ><img
           src="https://cdn.shopify.com/s/files/1/0705/7381/8094/files/login_icon_84756513-441f-4877-a8f2-a7f498fd91e7.png?v=1723105448"
           alt="ログイン"
       ></a>
     </div>
     <div class="sp_btn cart">
-      <a href="cart.html" class="icon_link"
+      <a href="/cart" class="icon_link"
         ><img
           src="ihttps://cdn.shopify.com/s/files/1/0705/7381/8094/files/cart_icon_707dc881-055b-47e3-a9d1-348bce29c72b.png?v=1723105434"
           alt="カート"

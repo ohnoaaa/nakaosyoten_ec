@@ -5,7 +5,7 @@
         <div class="footer_box">
           <h1 class="logo">ナカオ商店</h1>
           <p class="text">ONLINE SHOP</p>
-          <a href="index.html" class="btn"
+          <a href="{{ shop.url }}" class="btn"
             >TOP<span
               ><img
                 src="https://cdn.shopify.com/s/files/1/0705/7381/8094/files/btn_img.png"
@@ -17,9 +17,9 @@
         <!-- footer_box -->
         <nav class="footer_box">
           <ul>
-            <li><a href="about.html" class="footer_link">- ABOUT</a></li>
-            <li><a href="about.html" class="footer_link">- 佐賀牛について</a></li>
-            <li><a href="about.html" class="footer_link">- Q&A</a></li>
+            <li><a href="{{ pages.about.url }}" class="footer_link">- ABOUT</a></li>
+            <li><a href="{{ pages.sagabeef.url }}" class="footer_link">- 佐賀牛について</a></li>
+            <li><a href="{{ pages.faq.url }}" class="footer_link">- Q&A</a></li>
           </ul>
         </nav>
         <!-- footer_box -->
@@ -34,11 +34,11 @@
         <!-- footer_box -->
         <nav class="footer_box">
           <ul>
-            <li><a href="company.html" class="footer_link">- 会社概要</a></li>
-            <li><a href="policy.html" class="footer_link">- プライバシーポリシー</a></li>
-            <li><a href="terms.html" class="footer_link">- 特定商取引法に基づく表記</a></li>
+            <li><a href="{{ pages.company.url }}" class="footer_link">- 会社概要</a></li>
+            <li><a href="{{ pages.policy.url }}" class="footer_link">- プライバシーポリシー</a></li>
+            <li><a href="{{ pages.terms.url }}" class="footer_link">- 特定商取引法に基づく表記</a></li>
             <li>
-              <a href="contact.html" class="btn bg"
+              <a href="{{ pages.contact.url }}" class="btn bg"
                 >CONTACT<span
                   ><img
                     src="https://cdn.shopify.com/s/files/1/0705/7381/8094/files/btn_img.png"

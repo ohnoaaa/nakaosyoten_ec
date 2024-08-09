@@ -1915,8 +1915,8 @@ th {
 
 @media screen and (max-width: 767px) {
   .pages_bg_sp {
-    background: url(../images/pages_bg_sp.png) repeat-y;
-    background: url(../images/pages_bg_sp.png) no-repeat;
+    background: url(https://cdn.shopify.com/s/files/1/0705/7381/8094/files/pages_bg_sp.png) repeat-y;
+    background: url(https://cdn.shopify.com/s/files/1/0705/7381/8094/files/pages_bg_sp.png) no-repeat;
     background-size: cover;
     background-size: 100%;
   }
@@ -2040,7 +2040,7 @@ th {
   }
 }
 .story .story_ttl {
-  background: url(../images/about_story_ttl.png) 0/contain no-repeat;
+  background: url(https://cdn.shopify.com/s/files/1/0705/7381/8094/files/about_story_ttl.png) 0/contain no-repeat;
   width: 100%;
   font: 600 2.5rem/1.2 shippori-mincho, sans-serif;
   text-align: center;
@@ -2049,7 +2049,7 @@ th {
 }
 @media screen and (max-width: 767px) {
   .story .story_ttl {
-    background: url(../images/about_story_ttlsp.png) 0/contain no-repeat;
+    background: url(https://cdn.shopify.com/s/files/1/0705/7381/8094/files/about_story_ttlsp.png) 0/contain no-repeat;
     padding: 6.4rem 0 0;
     font-size: 1.3rem;
     background-position: top;
@@ -2729,6 +2729,7 @@ th {
   transform: translateX(-50%);
   display: flex;
   gap: 4vw;
+  z-index: 20;
   gap: 13.3333333333vw;
 }
 @media screen and (max-width: 767px) {
@@ -2823,7 +2824,7 @@ th {
   content: "";
   width: 45px;
   height: 45px;
-  background: url(../images/faq_btn.png) 0/contain no-repeat;
+  background: url(https://cdn.shopify.com/s/files/1/0705/7381/8094/files/faq_btn.png) 0/contain no-repeat;
   top: 27%;
   right: 0;
 }
@@ -2958,8 +2959,8 @@ th {
 }
 
 .company {
-  margin-top: -6rem;
-  padding-top: 20rem;
+  margin-top: -2rem;
+  padding-top: 16rem;
 }
 @media screen and (max-width: 767px) {
   .company {
@@ -3510,7 +3511,7 @@ th {
   }
 }
 .item .item_txt_box .item_info .counter .value {
-  background: url(../images/counter_btn.png) 0/contain no-repeat, #313131;
+  background: url(https://cdn.shopify.com/s/files/1/0705/7381/8094/files/counter_btn.png) 0/contain no-repeat, #313131;
   background-size: 20px, 100%;
   background-position: right 20px center, top;
   border: 1px solid #6A6A6A;
@@ -3643,13 +3644,13 @@ th {
   width: 50px;
 }
 .other_items .prev::before {
-  background: url(../images/prev_btn.png) 0/contain no-repeat;
+  background: url(https://cdn.shopify.com/s/files/1/0705/7381/8094/files/prev_btn.png) 0/contain no-repeat;
 }
 .other_items .prev::before:hover {
   opacity: 0.7;
 }
 .other_items .next::before {
-  background: url(../images/next_btn.png) 0/contain no-repeat;
+  background: url(https://cdn.shopify.com/s/files/1/0705/7381/8094/files/next_btn.png) 0/contain no-repeat;
 }
 .other_items .next::before:hover {
   opacity: 0.2;
