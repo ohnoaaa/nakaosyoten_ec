@@ -175,7 +175,6 @@
     %}
       {{ 'base.css' | asset_url | stylesheet_tag }}
     {% endif %}
-    {{ 'style.css' | asset_url | stylesheet_tag }}
     <link rel="stylesheet" href="{{ 'component-cart-items.css' | asset_url }}" media="print" onload="this.media='all'">
 
     {%- if settings.cart_type == 'drawer' -%}
@@ -216,6 +215,7 @@
         document.documentElement.classList.add('shopify-design-mode');
       }
     </script>
+    {{ 'style.css' | asset_url | stylesheet_tag }}
   </head>
 
   <body class="gradient{% if settings.animations_hover_elements != 'none' %} animate--hover-{{ settings.animations_hover_elements }}{% endif %}">
@@ -315,5 +315,44 @@
         });
       </script>
     {% endif %}
+    {% if template.name == 'product' %}
+      <script>
+        const splide = new Splide('.splide', {
+          // autoplay: true, // 自動再生
+          type: 'loop', // ループ
+          pauseOnHover: false, // カーソルが乗ってもスクロールを停止させない
+          pauseOnFocus: false, // 矢印をクリックしてもスクロールを停止させない
+          gap: 25, // スライド間の余白
+          speed: 1000, // スライダーの移動時間
+          perPage: 3, // 3枚表示
+          pagination: false, // ページネーションを非表示
+          breakpoints: {
+            768: {
+              pagination: true, // ページネーションを非表示
+              perPage: 1,
+            },
+          },
+        }).mount();
+      </script>
+    {% endif %}
+
+    {% comment %}
+      {% if template.name == 'pages.contact' %}
+        <script>
+          //チェックボックスをチェックすると、「入力内容を確認する」ボタンがactiveになる
+          $(function () {
+            $('#submit').prop('disabled', true);
+
+            $('#agree').on('click', function () {
+              if ($(this).prop('checked') == false) {
+                $('#submit').prop('disabled', true);
+              } else {
+                $('#submit').prop('disabled', false);
+              }
+            });
+          });
+        </script>
+      {% endif %}
+    {% endcomment %}
   </body>
 </html>
