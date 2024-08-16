@@ -1291,6 +1291,16 @@ th {
     flex-basis: 43%;
   }
 }
+@media screen and (max-width: 1130px) {
+  .about .about_container .about_img {
+    flex-basis: 30%;
+  }
+}
+@media screen and (max-width: 950px) {
+  .about .about_container .about_img {
+    flex-basis: 20%;
+  }
+}
 @media screen and (max-width: 767px) {
   .about .about_container .about_img {
     position: absolute;
@@ -1304,6 +1314,7 @@ th {
 .about .about_container .about_text {
   padding-top: 11rem;
   flex-basis: 29%;
+  position: relative;
 }
 @media screen and (max-width: 767px) {
   .about .about_container .about_text {
@@ -1328,8 +1339,8 @@ th {
 .about .about_container .about_text .about_copy {
   position: absolute;
   top: 63px;
-  right: -155px;
   right: 7%;
+  right: -35%;
   width: 107px;
   height: auto;
 }
@@ -1925,6 +1936,15 @@ th {
     height: 110px;
     object-fit: cover;
   }
+}
+
+.button {
+  padding: 1.5rem 2rem;
+  transition: 0.3s;
+}
+.button:hover {
+  background: #ccc;
+  color: #000;
 }
 
 .sub_ttl {
@@ -3804,6 +3824,63 @@ th {
   margin-top: 20rem;
 }
 
-.content-for-layout {
-  margin-top: 30rem;
+.caption-with-letter-spacing {
+  font-size: 1.6rem;
+}
+
+.underlined-link {
+  font-weight: 600;
+}
+
+.customer {
+  padding: 14rem 0 !important;
+  width: 1000px !important;
+  margin: 0 auto;
+}
+@media screen and (max-width: 420px) {
+  .customer {
+    width: 90% !important;
+    padding: 10rem 0 !important;
+  }
+}
+.customer button {
+  padding: 1rem 2rem !important;
+  border-radius: 1rem !important;
+}
+.customer form .field input {
+  background: #f5f5f5;
+  padding: 5px 1rem;
+  border-radius: 10px;
+}
+.customer form .field a {
+  text-decoration: underline;
+}
+.customer form .field label {
+  left: 13px;
+  top: 5px;
+}
+
+.cart__warnings {
+  padding: 14rem 0 !important;
+}
+.cart__warnings .button {
+  margin-top: 10rem !important;
+  background: #ccc;
+  padding: 1rem 3rem !important;
+  border-radius: 9px !important;
+}
+@media screen and (max-width: 420px) {
+  .cart__warnings {
+    padding: 10rem 0 !important;
+  }
+}
+
+.title-wrapper-with-link {
+  margin-top: 10rem !important;
+}
+
+.cart__ctas button {
+  padding: 1rem 2rem !important;
+  border-radius: 1rem !important;
+  background: #0B0083;
 }
