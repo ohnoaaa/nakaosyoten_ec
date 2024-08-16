@@ -99,12 +99,10 @@
               {%- render 'loading-spinner' -%}
             </button>
           {% endif %}
-          {%- if show_dynamic_checkout and product.selected_or_first_available_variant.available == true -%}
-            {{ form | payment_button }}
-          {%- endif -%}
         </div>
       {%- endform -%}
     </product-form>
+
   {%- else -%}
     <div class="product-form">
       <div class="product-form__buttons form">

@@ -1002,11 +1002,11 @@ th {
   .icon_link img {
     vertical-align: sub;
   }
-  .cart {
+  .cart-sp {
     right: 17%;
     right: 6.5rem;
   }
-  .cart .icon_link {
+  .cart-sp .icon_link {
     width: 21px;
     height: 19px;
   }
@@ -3624,12 +3624,18 @@ th {
   width: 100%;
   padding: 1.8rem 2rem;
   margin: 2.3rem auto 0;
+  transition: 0.3s;
 }
 .item .item_txt_box .item_info .item_btn button span {
   color: #fff;
+  font-size: 1.7rem;
 }
 @media screen and (max-width: 767px) {
   .item .item_txt_box .item_info .item_btn button {
+    font-size: 1.1rem;
+  }
+  .item .item_txt_box .item_info .item_btn button span {
+    color: #fff;
     font-size: 1.1rem;
   }
 }
