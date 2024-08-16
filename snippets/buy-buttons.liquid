@@ -57,7 +57,7 @@
           value="{{ product.selected_or_first_available_variant.id }}"
           {% if product.selected_or_first_available_variant.available == false
             or quantity_rule_soldout
-            or product.selected_or_first_available_variant == nil
+            or product.selected_or_first_available_variant == null
           %}
             disabled
           {% endif %}
@@ -68,7 +68,7 @@
           {%- render 'gift-card-recipient-form', product: product, form: form, section: section -%}
         {%- endif -%}
 
-        <div class="product-form__buttons">
+        <div class="product-form__buttons item_btn">
           {%- liquid
             assign check_against_inventory = true
             if product.selected_or_first_available_variant.inventory_management != 'shopify' or product.selected_or_first_available_variant.inventory_policy == 'continue'
@@ -78,30 +78,28 @@
               assign quantity_rule_soldout = true
             endif
           -%}
-          <button
-            id="ProductSubmitButton-{{ section_id }}"
-            type="submit"
-            name="add"
-            class="product-form__submit button button--full-width {% if show_dynamic_checkout %}button--secondary{% else %}button--primary{% endif %}"
-            {% if product.selected_or_first_available_variant.available == false
-              or quantity_rule_soldout
-              or product.selected_or_first_available_variant == nil
-            %}
+          {% if product.selected_or_first_available_variant.available == false or quantity_rule_soldout %}
+            <button
+              id="ProductSubmitButton-{{ section_id }}"
+              type="button"
+              class="product-form__submit button button--full-width button--secondary"
               disabled
-            {% endif %}
-          >
-            <span>
-              {%- if product.selected_or_first_available_variant == nil -%}
-                {{ 'products.product.unavailable' | t }}
-              {%- elsif product.selected_or_first_available_variant.available == false or quantity_rule_soldout -%}
-                {{ 'products.product.sold_out' | t }}
-              {%- else -%}
-                {{ 'products.product.add_to_cart' | t }}
-              {%- endif -%}
-            </span>
-            {%- render 'loading-spinner' -%}
-          </button>
-          {%- if show_dynamic_checkout -%}
+            >
+              <span>{{ 'products.product.sold_out' | t }}</span>
+              {%- render 'loading-spinner' -%}
+            </button>
+          {% else %}
+            <button
+              id="ProductSubmitButton-{{ section_id }}"
+              type="submit"
+              name="add"
+              class="product-form__submit button button--full-width button--primary"
+            >
+              <span>{{ 'products.product.add_to_cart' | t }}</span>
+              {%- render 'loading-spinner' -%}
+            </button>
+          {% endif %}
+          {%- if show_dynamic_checkout and product.selected_or_first_available_variant.available == true -%}
             {{ form | payment_button }}
           {%- endif -%}
         </div>
