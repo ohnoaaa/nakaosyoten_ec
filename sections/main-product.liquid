@@ -86,7 +86,9 @@
         </div>
         <div class="item_txt_box product__info-wrapper">
           <div class="item_txt">
-            <p class="item_num">商品番号: {{ product.sku }}</p>
+            {% if product.sku %}
+              <p class="item_num">商品番号: {{ product.sku }}</p>
+            {% endif %}
             <p class="item_lead">{{ product.description | strip_html }}</p>
             <h3 class="item_name pc">{{ product.title }}</h3>
             <p class="item_gram pc">内容量：{{ product.metafields.custom._ryou }}</p>
@@ -117,20 +119,25 @@
                       <span>{{ 'products.product.volume_pricing.note' | t }}</span>
                     </div>
                   {%- endif -%}
-                  {%- if cart.taxes_included or cart.duties_included or shop.shipping_policy.body != blank -%}
-                    <div class="product__tax caption rte">
-                      {%- if cart.duties_included and cart.taxes_included -%}
-                        {{ 'products.product.duties_and_taxes_included' | t }}
-                      {%- elsif cart.taxes_included -%}
-                        {{ 'products.product.taxes_included' | t }}
-                      {%- elsif cart.duties_included -%}
-                        {{ 'products.product.duties_included' | t }}
-                      {%- endif -%}
-                      {%- if shop.shipping_policy.body != blank -%}
-                        {{ 'products.product.shipping_policy_html' | t: link: shop.shipping_policy.url }}
-                      {%- endif -%}
-                    </div>
-                  {%- endif -%}
+                  {% comment %}
+                    {%- if cart.taxes_included or cart.duties_included or shop.shipping_policy.body != blank -%}
+                      <div class="product__tax caption rte">
+                        {%- if cart.duties_included and cart.taxes_included -%}
+                          {{ 'products.product.duties_and_taxes_included' | t }}
+                        {%- elsif cart.taxes_included -%}
+                          {{ 'products.product.taxes_included' | t }}
+                        {%- elsif cart.duties_included -%}
+                          {{ 'products.product.duties_included' | t }}
+                        {%- endif -%}
+                        {%- if shop.shipping_policy.body != blank -%}
+                          {{ 'products.product.shipping_policy_html' | t: link: shop.shipping_policy.url }}
+                        {%- endif -%}
+                      </div>
+                    {%- endif -%}
+                  {% endcomment %}
+                  {% if product.metafields.custom._cost %}
+                    <p class="cost">配送料：{{ product.metafields.custom._cost }}（※離島についての説明）</p>
+                  {% endif %}
                   <div {{ block.shopify_attributes }}>
                     {%- assign product_form_installment_id = 'product-form-installment-' | append: section.id -%}
                     {%- form 'product', product, id: product_form_installment_id, class: 'installment caption-large' -%}
@@ -465,32 +472,47 @@
             {%- endfor -%}
           </div>
           {% comment %} </section> {% endcomment %}
-          <dl class="pages_list">
-            <dt class="info_head">配送料</dt>
-            <dd class="contents">{{ product.metafields.custom._cost }}</dd>
-          </dl>
-          <dl class="pages_list">
-            <dt class="info_head">配送方法</dt>
-            <dd class="contents">
-              {{ product.metafields.custom._howpost }}
-            </dd>
-          </dl>
-          <dl class="pages_list">
-            <dt class="info_head">包装</dt>
-            <dd class="contents">{{ product.metafields.custom._housou }}</dd>
-          </dl>
-          <dl class="pages_list">
-            <dt class="info_head">保存方法</dt>
-            <dd class="contents">{{ product.metafields.custom._hozon }}</dd>
-          </dl>
-          <dl class="pages_list">
-            <dt class="info_head">賞味期限</dt>
-            <dd class="contents">{{ product.metafields.custom._kigen }}</dd>
-          </dl>
-          <dl class="pages_list">
-            <dt class="info_head">内容量</dt>
-            <dd class="contents">内容量：{{ product.metafields.custom._ryou }}</dd>
-          </dl>
+          {% if product.metafields.custom._cost %}
+            <dl class="pages_list">
+              <dt class="info_head">配送料</dt>
+              <dd class="contents">{{ product.metafields.custom._cost }}</dd>
+            </dl>
+          {% endif %}
+
+          {% if product.metafields.custom._howpost %}
+            <dl class="pages_list">
+              <dt class="info_head">配送方法</dt>
+              <dd class="contents">{{ product.metafields.custom._howpost }}</dd>
+            </dl>
+          {% endif %}
+
+          {% if product.metafields.custom._housou %}
+            <dl class="pages_list">
+              <dt class="info_head">包装</dt>
+              <dd class="contents">{{ product.metafields.custom._housou }}</dd>
+            </dl>
+          {% endif %}
+
+          {% if product.metafields.custom._hozon %}
+            <dl class="pages_list">
+              <dt class="info_head">保存方法</dt>
+              <dd class="contents">{{ product.metafields.custom._hozon }}</dd>
+            </dl>
+          {% endif %}
+
+          {% if product.metafields.custom._kigen %}
+            <dl class="pages_list">
+              <dt class="info_head">賞味期限</dt>
+              <dd class="contents">{{ product.metafields.custom._kigen }}</dd>
+            </dl>
+          {% endif %}
+
+          {% if product.metafields.custom._ryou %}
+            <dl class="pages_list">
+              <dt class="info_head">内容量</dt>
+              <dd class="contents">内容量：{{ product.metafields.custom._ryou }}</dd>
+            </dl>
+          {% endif %}
         </div>
       </div>
     </div>
@@ -546,72 +568,6 @@
       {{ product | structured_data }}
     </script>
   </div>
-  <div class="other_items fadeUpTrigger">
-    <div class="img_swiper item_list">
-      <div class="splide" role="group" aria-label="3枚表示のスライダー(1枚ごとスライド)">
-        <div class="splide__track">
-          <div class="splide__list">
-            <a href="/" class="splide__slide">
-              <img
-                src="https://cdn.shopify.com/s/files/1/0705/7381/8094/files/lineup_01.png"
-                alt=""
-                width="219"
-                height="254"
-              >
-              <p class="lineup_name">商品名(個別ページヘ)</p>
-            </a>
-            <a href="/" class="splide__slide">
-              <img
-                src="https://cdn.shopify.com/s/files/1/0705/7381/8094/files/lineup_02.png"
-                alt=""
-                width="219"
-                height="254"
-              >
-              <p class="lineup_name">商品名(個別ページヘ)</p>
-            </a>
-            <a href="/" class="splide__slide">
-              <img
-                src="https://cdn.shopify.com/s/files/1/0705/7381/8094/files/lineup_03.png"
-                alt=""
-                width="219"
-                height="254"
-              >
-              <p class="lineup_name">商品名(個別ページヘ)</p>
-            </a>
-          </div>
-          <!-- splide__list -->
-        </div>
-        <!-- splide__track -->
-        <div class="splide__arrows">
-          <button class="splide__arrow splide__arrow--prev button prev"></button>
-          <button class="splide__arrow splide__arrow--next button next"></button>
-        </div>
-      </div>
-      <!-- splide -->
-    </div>
-    <!-- img_swiper -->
-  </div>
-  <section class="cta fadeUpTrigger">
-    <div class="cta_container">
-      <div class="cta_txt">
-        <p class="en_ttl">CONTACT</p>
-        <a href="{{ pages.contact.url }}" class="btn"
-          >お問い合わせ<span
-            ><img
-              src="https://cdn.shopify.com/s/files/1/0705/7381/8094/files/btn_img.png"
-              alt=""
-              width="43"
-              height="43"></span
-        ></a>
-      </div>
-      <!-- cta_txt -->
-      <div class="cta_img">
-        <img src="https://cdn.shopify.com/s/files/1/0705/7381/8094/files/cta_img.jpg" alt="" width="500" height="289">
-      </div>
-    </div>
-    <!-- cta_container -->
-  </section>
-  <!-- cta -->
 </product-info>
 
 {% schema %}

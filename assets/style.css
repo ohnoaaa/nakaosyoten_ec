@@ -1950,7 +1950,6 @@ th {
   transition: 0.3s;
 }
 .button:hover {
-  background: #ccc;
   color: #000;
 }
 
@@ -3519,10 +3518,12 @@ th {
 }
 .item {
   margin-top: 17rem;
+  padding-bottom: 6rem;
 }
 @media screen and (max-width: 767px) {
   .item {
     margin-top: 3.5rem;
+    padding-bottom: 4rem;
   }
 }
 .item .item_container {
@@ -3594,6 +3595,15 @@ th {
 @media screen and (max-width: 767px) {
   .item .item_txt_box .item_info .cost {
     margin-top: 1.1rem;
+    font-size: 1.1rem;
+  }
+}
+.item .item_txt_box .item_info .quantity__label {
+  font-size: 1.7rem;
+  color: #fff;
+}
+@media screen and (max-width: 767px) {
+  .item .item_txt_box .item_info .quantity__label {
     font-size: 1.1rem;
   }
 }
@@ -3678,7 +3688,7 @@ th {
 
 .other_items {
   background: #2C2C2C;
-  margin-top: 12rem;
+  margin-top: 8rem;
   padding: 10rem 3rem 9rem;
   /* 矢印共通のスタイル */
   /* 前の矢印 */
@@ -3844,6 +3854,9 @@ th {
   width: 1000px !important;
   margin: 0 auto;
 }
+.customer h1 {
+  margin-bottom: 4rem;
+}
 @media screen and (max-width: 420px) {
   .customer {
     width: 90% !important;
@@ -3852,15 +3865,34 @@ th {
 }
 .customer button {
   padding: 1rem 2rem !important;
-  padding: 1rem 10rem !important;
-  background: #ccc;
+  padding: 1rem 7rem !important;
+  background: #ccc !important;
   color: #000;
   transition: 0.3s;
+  margin-top: 3rem !important;
 }
 .customer button:hover {
   opacity: 0.7;
 }
+.customer .cart-item__media a {
+  border: none;
+}
+.customer .cart-item__details a {
+  border: none;
+  padding: 1rem 0;
+}
+.customer .cart-item__quantity-wrapper button {
+  padding: 1rem !important;
+  border: 1px solid #ccc;
+}
+.customer .quantity-popover-container button {
+  margin-top: 0 !important;
+}
+.customer form .field {
+  width: 100%;
+}
 .customer form .field input {
+  width: 100%;
   background: #f5f5f5;
   padding: 5px 1rem;
   color: #000;
@@ -3887,6 +3919,14 @@ th {
   border: 1px solid #fff;
   padding: 1rem 3rem;
 }
+.customer .forgot_btn {
+  border: none !important;
+  border-bottom: 1px solid #ccc !important;
+  padding: 10px 0 0;
+}
+.customer .list button {
+  background: #ccc;
+}
 
 .cart__warnings {
   padding: 14rem 0 !important;
@@ -3909,4 +3949,13 @@ th {
 .cart__ctas button {
   padding: 1rem 2rem !important;
   background: #0B0083;
+}
+
+.cart-items thead {
+  border-bottom: 1px solid #ccc !important;
+}
+
+.cart-item tbody tr {
+  padding-bottom: 4rem;
+  border-bottom: 1px solid #ccc !important;
 }
