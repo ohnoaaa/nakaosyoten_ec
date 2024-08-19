@@ -1450,6 +1450,7 @@ th {
 .lineup::after {
   content: "";
   width: 64.5138888889vw;
+  width: 65%;
   height: 90%;
   background: #393939;
   position: absolute;
@@ -1462,11 +1463,16 @@ th {
     width: 60%;
   }
 }
+@media screen and (max-width: 1130px) {
+  .lineup::after {
+    width: 64%;
+  }
+}
 @media screen and (max-width: 767px) {
   .lineup::after {
     width: 81.9%;
     right: auto;
-    height: 51.5%;
+    height: 59%;
     left: 50%;
     transform: translateX(-50%);
     bottom: 0;
@@ -1475,6 +1481,7 @@ th {
 }
 @media screen and (max-width: 420px) {
   .lineup::after {
+    height: 50%;
     width: 76%;
   }
 }
@@ -3845,12 +3852,18 @@ th {
 }
 .customer button {
   padding: 1rem 2rem !important;
-  border-radius: 1rem !important;
+  padding: 1rem 10rem !important;
+  background: #ccc;
+  color: #000;
+  transition: 0.3s;
+}
+.customer button:hover {
+  opacity: 0.7;
 }
 .customer form .field input {
   background: #f5f5f5;
   padding: 5px 1rem;
-  border-radius: 10px;
+  color: #000;
 }
 .customer form .field a {
   text-decoration: underline;
@@ -3858,6 +3871,21 @@ th {
 .customer form .field label {
   left: 13px;
   top: 5px;
+  color: #333;
+}
+.customer form select {
+  background: #fff;
+  color: #000;
+  padding: 1rem;
+}
+.customer form select svg {
+  color: #000;
+  left: auto;
+  right: 2rem;
+}
+.customer a {
+  border: 1px solid #fff;
+  padding: 1rem 3rem;
 }
 
 .cart__warnings {
@@ -3867,7 +3895,6 @@ th {
   margin-top: 10rem !important;
   background: #ccc;
   padding: 1rem 3rem !important;
-  border-radius: 9px !important;
 }
 @media screen and (max-width: 420px) {
   .cart__warnings {
@@ -3881,6 +3908,5 @@ th {
 
 .cart__ctas button {
   padding: 1rem 2rem !important;
-  border-radius: 1rem !important;
   background: #0B0083;
 }
