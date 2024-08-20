@@ -135,8 +135,9 @@
                       </div>
                     {%- endif -%}
                   {% endcomment %}
+                  <p class="cost">配送料込み</p>
                   {% if product.metafields.custom._cost %}
-                    <p class="cost">配送料：{{ product.metafields.custom._cost }}（※離島についての説明）</p>
+                    {% comment %} <p class="cost">配送料：{{ product.metafields.custom._cost }}（※離島についての説明）</p> {% endcomment %}
                   {% endif %}
                   <div {{ block.shopify_attributes }}>
                     {%- assign product_form_installment_id = 'product-form-installment-' | append: section.id -%}
