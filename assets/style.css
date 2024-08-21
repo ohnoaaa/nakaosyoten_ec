@@ -1243,7 +1243,8 @@ th {
 
 .txt {
   margin-top: 3.4rem;
-  line-height: 4.4;
+  line-height: 2.7;
+  letter-spacing: 0.075em;
   font-size: 1.7rem;
 }
 @media screen and (max-width: 767px) {
@@ -1392,7 +1393,7 @@ th {
   }
 }
 .bland .bland_container {
-  width: 58%;
+  width: 54%;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -1725,6 +1726,11 @@ th {
 @media screen and (max-width: 767px) {
   .qa .img_curve img {
     height: 40px;
+  }
+}
+@media screen and (max-width: 420px) {
+  .qa .wrapper {
+    width: 85%;
   }
 }
 .qa .qa_container {
@@ -2128,7 +2134,7 @@ th {
   }
 }
 .story .story_box {
-  flex-basis: 44%;
+  flex-basis: 35%;
 }
 @media screen and (max-width: 767px) {
   .story .story_box {
@@ -2155,7 +2161,11 @@ th {
   }
 }
 .story .story_img {
-  flex-basis: 48.5%;
+  flex-basis: 56%;
+}
+.story .story_img img {
+  height: 490px;
+  object-fit: cover;
 }
 @media screen and (max-width: 767px) {
   .story .story_img {
@@ -2194,11 +2204,15 @@ th {
 .story .reverse .story_box {
   margin-right: 12%;
 }
+.story .reverse .story_box .txt {
+  margin-top: 0;
+}
 @media screen and (max-width: 767px) {
   .story .reverse .story_box {
     display: contents;
   }
   .story .reverse .story_box .txt {
+    margin-top: 2rem;
     order: 3;
     width: 81%;
     margin: 0 auto;
@@ -3521,6 +3535,12 @@ th {
     margin: 3.6rem auto 3rem;
   }
 }
+@media screen and (max-width: 767px) and (max-width: 420px) {
+  .item_img img {
+    height: 99vw;
+    object-fit: cover;
+  }
+}
 .item {
   margin-top: 17rem;
   padding-bottom: 6rem;
@@ -3571,6 +3591,11 @@ th {
 .item .item_txt_box {
   flex-basis: 50%;
   font-size: 1.7rem;
+}
+@media screen and (max-width: 420px) {
+  .item .item_txt_box {
+    width: 100%;
+  }
 }
 .item .item_txt_box .item_gram {
   margin-top: 2.6rem;
