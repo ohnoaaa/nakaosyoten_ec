@@ -76,14 +76,43 @@
   <div class="item_sp sp fadeUpTrigger">
     <h3 class="item_name">{{ product.title }}</h3>
     <p class="item_gram">内容量：{{ product.metafields.custom._ryou }}</p>
-    <div class="item_img"><img src="{{ product.featured_image | img_url: 'large' }}" alt="{{ product.title }}"></div>
+    {% comment %} <div class="item_img"><img src="{{ product.featured_image | img_url: 'large' }}" alt="{{ product.title }}"></div> {% endcomment %}
+
   </div>
+
   <div class="wrapper">
     <div class="item">
       <div class="item_container product product--{{ section.settings.media_size }} product--{{ section.settings.media_position }} product--{{ section.settings.gallery_layout }} product--mobile-{{ section.settings.mobile_thumbnails }} grid grid--1-col {% if product.media.size > 0 %}grid--2-col-tablet{% else %}product--no-media{% endif %}">
-        <div class="item_img pc grid__item product__media-wrapper">
+
+        {% comment %} 商品画像 {% endcomment %}
+        {% comment %} <div class="item_img pc grid__item product__media-wrapper">
           <img src="{{ product.featured_image | img_url: 'large' }}" alt="{{ product.title }}">
+        </div> {% endcomment %}
+
+        <div class="item-img_wrap">
+          <div class="swiper-item">
+            <div class="swiper-wrapper">
+              {% for image in product.images %}
+                <div class="swiper-slide">
+                  <div class="img-wrap">
+                    <img src="{{ image.src | img_url: 'master' }}" alt="">
+                  </div>
+                </div>
+              {%- endfor -%}
+            </div><!-- /.swiper-wrapper -->
+          </div><!-- /.swiper-item -->
+          <div class="thumb-list">
+            {% for image in product.images %}
+              <div class="thumb-item">
+                <a class="thumb-link" href="javascript:void(0);" onclick="thumbnail({{ forloop.index }})">
+                  <img src="{{ image.src | img_url: 'master' }}" alt="">
+                </a>
+              </div>
+            {%- endfor -%}
+          </div><!-- /.thumb-list -->
         </div>
+
+
         <div class="item_txt_box product__info-wrapper">
           <div class="item_txt">
             {% if product.sku %}

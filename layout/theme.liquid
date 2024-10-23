@@ -290,6 +290,7 @@
     {%- endif -%}
     {{ '//ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js' | script_tag }}
     {% comment %} {{ '//unpkg.com/swiper/swiper-bundle.min.js' | script_tag }} {% endcomment %}
+    <script src="{{ 'swiper-bundle.min.js' | asset_url }}"></script>
     {{ '//cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js' | script_tag }}
     <script src="{{ 'jquery.inview.min.js' | asset_url }}" defer="defer"></script>
     {% comment %} <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script> {% endcomment %}
@@ -316,6 +317,15 @@
       </script>
     {% endif %}
     {% if template.name == 'product' %}
+      <script>
+        //商品詳細スライダー
+        const swiperitem = new Swiper(".swiper-item", {
+          loop: true,
+        }); 
+        function thumbnail(index) {
+          swiperitem.slideTo(index);
+        }
+      </script>
       <script>
         const splide = new Splide('.splide', {
           // autoplay: true, // 自動再生
