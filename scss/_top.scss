@@ -81,7 +81,7 @@
     position: absolute;
     right: pxtovw(40);
     bottom: pxtovw(53);
-    padding: 2.4rem;
+    padding: 4rem 2.4rem;
     font-size: 25px;
     font-weight: 900;
     line-height: 1.1;
@@ -392,8 +392,11 @@
     .splide__slide{
       width: 219px;
       img {
-        height: auto;
+        // height: auto;
+        height: 254px;
         width: 100%;
+        object-fit: cover;
+        object-position: center;
       }
     }
     .lineup_name{
